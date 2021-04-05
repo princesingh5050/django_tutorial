@@ -1,0 +1,18 @@
+<html>
+<head>
+<script type="text/javaScript">
+function disableBackButton()
+{
+window.history.forward();
+}
+setTimeout("disableBackButton()", 0);
+</script>
+</head>
+<body onload="disableBackButton()">
+</body>
+</html>
+{% include 'header.html' %}
+{%load static%}
+<div align="center">
+ <button><a href="/" style="font-size:30px">Confirm logout</a></button>
+</div>

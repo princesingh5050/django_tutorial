@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{%load static%}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body
+        {
+            background:url({% static '/home.jpg'%});
+            background-size:1000px 1000px;
+        }
+    </style>
+</head>
+<body>
+{% include 'header.html'%}
+<button><a href="/logout/">Logout</a></button>
+    <h3 style="color:red">{{msg}}</h3>
+<center><form action="/valid/" method="post" style="background:rgba(0,0,0,0.5);box-shadow:2px 2px 20 px; padding:10px;width:40%;margin-top:10px;bordor:2px solid red">
+   {% csrf_token%}
+    <table cellspacing="10" style="color:red;font-size:20px">
+        <tr>
+            <td>
+                Userid:
+            </td>
+            <td>
+                <input type="text" name="user" required="required">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input type="password" name="pass" required="required">
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <input type="submit" value="submit" class="btn btn-primary">
+            </td>
+            <td>
+                <input type="reset" value="reset" class="btn btn-primary">
+            </td>
+        </tr>
+
+    </table>
+</form></center>
+</div>
+</body>
+</html>

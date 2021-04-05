@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{%load static%}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body
+        {
+            background:url({% static '/home.jpg'%});
+            background-size:1000px 1000px;
+        }
+    </style>
+</head>
+<body>
+{% include 'header.html'%}
+<marquee behavior="alternate"scrollamount="20"><i><h1 style="color:red;font-size:50px">Credicxo Tech Pvt.Ltd. </h1></i></marquee>
+<div align="center" style="padding:50px;">
+    <h1 style="color:red">{{msg}}</h1>
+<form action="/auth/" method="post" style="background:rgba(0,0,0,0.5);box-shadow:2px 2px 20 px; padding:10px;width:40%;margin-top:10px;bordor:2px solid red">
+   {% csrf_token%}
+    <table cellspacing="10" style="color:red;font-size:20px">
+        <tr>
+            <td>
+                Userid:
+            </td>
+            <td>
+                <input type="text" name="user" required="required">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input type="password" name="pass" required="required">
+            </td>
+        </tr>
+        <tr>
+            <td>select type:</td>
+            <td>
+                <select name="type">
+                    <option value="">---select---</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Student">Student</option>
+
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="submit" class="btn btn-primary">
+            </td>
+            <td>
+                <input type="reset" value="reset" class="btn btn-primary">
+            </td>
+        </tr>
+
+<tr>
+    <td>
+
+        <button class="btn btn-warning"><a href="/newuser">Admin</a></button>
+    </td>
+    <td>
+        <button class="btn btn-warning"><a href="/forgotpass">Forgot password</a></button>
+    </td>
+</tr>
+
+    </table>
+</form>
+</div>
+</body>
+<footer>
+    <h4 style="color:red">NOTE:-</h4>
+    <h6 style="color:white">Hello i am prince singh creator of this website.Following Dicribtion About Website.<br>
+    1:- In this website default page is Loging Page where Teacher & Students are Login.<br>
+    2:- Teacher Add/List The Student.<br>
+    3:-Teacher Give the Studentid & Password To the student.<br>
+    4:-Student Onely Able To See Information.<br>
+    5:-Forgot password Functionality is use Both(Teacher&Student)<br>
+        6:- Admin ADD/List the Both User(Teacher&Student).</h6>
+      <h6 style="color:yellow">7:- Admin UserID = ' admin ' And Password = ' admin ' <h6>
+</footer>
+</html>

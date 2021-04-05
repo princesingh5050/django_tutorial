@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{%load static%}
+ <style>
+
+        body
+        {
+            background:url({% static '/login.jpg'%});
+            background-size:1000px 1000px;
+        }
+    </style>
+<body>
+{% include 'header.html'%}
+<button><a href="/logout/">Logout</a></button>
+<div align="center">
+    <h3 style="color:red;font-size:30px">Admin (ADD/LIST) User</h3>
+    {{msg}}
+<form action="/login/" method="post" enctype="multipart/form-data" style="background:yellow;padding:10px;width:40%;margin-top:10px;border:2px solid;">
+    {%csrf_token %}
+    <table cellspacing="10">
+        <tr>
+            <td>
+                Userid:
+            </td>
+            <td>
+                <input type="text" name="user" required="required">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input type="password" name="pass" required="required">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                <input type="email" name="email" required="required">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Mobile:
+            </td>
+            <td>
+                <input type="number" name="mob" required="required">
+            </td>
+        </tr>
+         <tr>
+            <td>select type:</td>
+            <td>
+                <select name="type">
+                    <option value="">---select---</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Student">Student</option>
+
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+        <tr>
+            <td>
+                <input type="submit" value="submit">
+            </td>
+            <td>
+                <input type="reset">
+            </td>
+        </tr>
+
+
+    </table>
+</form>
+</div>
+</body>
+
+</html>

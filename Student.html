@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% include 'header.html'%}
+{%csrf_token%}
+<body>
+<h3 style="color:red">Welcome Student.....</h3>
+<h5>View Your Details.</h5>
+<div align="right">
+    <button style="font-size=25px"><a href="/logout" style="color=black">logout</a></button></div>
+<div align="center">
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">USER ID:</th>
+        <th scope="col">PASSWORD:</th>
+         <th scope="col">NAME:</th>
+        <th scope="col">FATHER NAME:</th>
+        <th scope="col">MOBILE:</th>
+        <th scope="col">EMAIL:</th>
+    </tr>
+    </thead>
+    {%for student in accounts%}
+    <tbody>
+        <td>{{student.studentid}}</td>
+        <td>{{student.student_password}}</td>
+         <td>{{student.student_name}}</td>
+         <td>{{student.student_fname}}</td>
+        <td>{{student.student_mobile}}</td>
+        <td>{{student.student_email}}</td>
+
+
+    </tr>
+    {%endfor%}
+    </tbody>
+</table><br><br>
+    <marquee behavior="alternate"scrollamount="20"><h3>Thank Student!</h3></marquee>
+
+</body>
+</html>
